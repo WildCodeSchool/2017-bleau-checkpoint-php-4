@@ -1,0 +1,51 @@
+{% extends '@Subject/layout.html.twig' %}
+
+{% block body %}
+    <div class="container sf3">
+        <div class="row ennonce">
+            <h1>Symfony</h1>
+            <div class="row">
+                <h2>Enoncé</h2>
+                <p>Réaliser un service "calculateur de tarif"</p>
+                <p>A partir de données dans un formulaire type "panier" statique, les données seront envoyées au service pour calcul,
+                le service retournera un tableau contenant le montant HT et le montant TTC total.</p>
+            </div>
+        </div>
+        <div class="instruction left-align row">
+            <h2>TODO</h2>
+            <ol>
+                <li>On utilisera AppBundle.</li>
+                <li>Pas de base de données</li>
+                <li>Créé un formulaire avec 3 champs :
+                    <ol>
+                        <li>Nom du produit</li>
+                        <li>Quantité (un entier de 0 à 10)</li>
+                        <li>Prix (un décimal positif)</li>
+                    </ol>
+                </li>
+                <li>Créé les validations nécessaires pour respecter les critères précédents.</li>
+                <li>À la soumission du formulaire, les données sont envoyées dans un Service "Calculator" que vous devez créer.</li>
+                <li>La TVA (actuellement à 20%) doit être paramétrable.</li>
+                <li>Le service doit retourner un tableau contenant le montant total Hors Taxe et Toutes Taxes Comprise.</li>
+                <li>Vous pouvez afficher le résultat du service sur le même écran ou dans un autre.</li>
+            </ol>
+
+            <h2>Bonus</h2>
+            <ol>
+                <li>Utilise les "CollectionType" pour pouvoir ajouter plusieurs "produits" et n'être plus limité à un seul.</li>
+            </ol>
+        </div>
+        <div class="row line_divider">
+            <p>Tu es libre d'utiliser le/les frameworks css/js de ton choix, aucune librairie n'est chargée</p>
+            <p>Pour le design, fais comme tu le sens, ça doit juste être "joli" (si tu as du temps, met un petit footer, barre de nav...) ;-)</p>
+            <p>Utilise le fichier base.html.twig si tu en as besoin, tout le reste doit se trouver dans ton bundle</p>
+            <p>Bon courage !</p>
+        </div>
+        <div class="row">
+            <div class="col m12 button_homepage">
+                <a href="{{ path('homepage') }}" class="waves-effect waves-light btn">Retour à la page d'accueil</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
