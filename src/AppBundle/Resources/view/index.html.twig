@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Checkpoint 4 - PHP</title>
+    {% block stylesheets %}
+        <!-- Compiled and minified CSS -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    {% endblock %}
+</head>
+
+<body id="body">
+
+
+
+<div class="modal-content">
+    {{ form_start(form) }}
+
+    <div class="input-field">
+        {{ form_label (form.nom) }}
+        {{ form_widget (form.nom) }}
+        {{ form_errors (form.nom) }}
+    </div>
+    <div class="input-field">
+        {{ form_label(form.quantite) }}
+        {{ form_widget(form.quantite) }}
+        {{ form_errors(form.quantite) }}
+    </div>
+    <div class="input-field">
+        {{ form_label(form.prix) }}
+        {{ form_widget(form.prix) }}
+        {{ form_errors(form.prix) }}
+    </div>
+    <div class="input-field">
+        <div class="center-align">
+            <input class="btn z-depth-5 teal darken-4" type="submit" value="Create" />
+        </div>
+    </div>
+
+    {{ form_end(form) }}
+</div>
+
+
+
+{% for produit in produits %}
+
+<table>
+    <tr>
+        <td>{{ panier.nom }}</td>
+        <td>{{ panier.quantite }}</td>
+        <td>{{ panier.prix }}</td>
+    </tr>
+</table>
+
+{% endfor %}
+
+
+{% block body %}{% endblock %}
+</body>
+</html>
+
+

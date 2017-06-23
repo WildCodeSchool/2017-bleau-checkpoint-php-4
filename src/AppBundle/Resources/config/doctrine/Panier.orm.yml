@@ -1,0 +1,19 @@
+AppBundle\Entity\Panier:
+    type: entity
+    table: null
+    repositoryClass: AppBundle\Repository\PanierRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        nom:
+            type: string
+            length: 255
+        quantite:
+            type: integer
+        prix:
+            type: integer
+    lifecycleCallbacks: {  }
