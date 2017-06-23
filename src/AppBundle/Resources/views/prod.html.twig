@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+ <div class="container">
+     <div class="row">
+         <div class="col-sm-12">
+             {{ form_start(form) }}
+             {{ form_end(form) }}
+         </div>
+     </div>
+     <div id="result">
+
+     </div>
+ </div>
+{%  endblock %}
+
+{% block javascripts %}
+    <script>
+        $(document).ready( function () {
+            $('form').submit(function (e) {
+                e.preventDefault();
+                var data = $(this).serialize();
+                $.ajax({
+                    method: 'post',
+                    url: '{{ path('prod') }}',
+                    data: data,
+
+                    success: function (response) {
+                        console.log(response);
+                        var tva = '<p>la tva pour vos articles s\'élève à : ' + response.tva['tva'] + '<br>Le prix toute taxes comprises est de : ' + response.tva['ttc'] + '</p>'
+                        
+                        $('#result').html(tva);
+                    }
+                })
+            })
+        })
+    </script>
+{% endblock %}

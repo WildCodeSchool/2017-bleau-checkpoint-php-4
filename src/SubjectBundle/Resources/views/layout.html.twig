@@ -14,21 +14,7 @@
 
 <body id="body">
 {% block nav_bar %}
-    <ul id="dropdown1" class="dropdown-content">
-        <li><a href="{{ path('homepage') }}">Accueil</a></li>
-        <li class="divider"></li>
-        <li><a href="{{ path('algo') }}">Algorithmique</a></li>
-        <li class="divider"></li>
-        {#<li><a href="{{ path('sf3') }}">Symfony / MVC / Intégration</a></li>#}
-    </ul>
-    <nav>
-        <div class="nav-wrapper">
-            <a href="{{ path('homepage') }}" class="brand-logo center nav_bar_logo"><img src="https://avatars1.githubusercontent.com/u/8874047?v=3&s=200" alt="logo wcs"/></a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
-                <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Menu</a></li>
-            </ul>
-        </div>
-    </nav>
+
 {% endblock %}
 
 {% block body %}{% endblock %}
