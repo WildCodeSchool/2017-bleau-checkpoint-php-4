@@ -1,0 +1,4 @@
+services:
+    blog.calculator:
+        class: AppBundle\Services\Calculator
+        # '%kernel.project_dir%/web/uploads/images'

@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Panier;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,9 +14,13 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $panier = new Panier();
+        $form = $this->createForm('AppBundle\Form\PanierType', $panier);
+
+        $form->handleRequest($request);
         // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        return $this->render('default/index.html.twig', array(
+            'form' => $form,
+        ));
     }
 }
