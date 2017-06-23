@@ -7,7 +7,27 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+
+            <form method="post" action="Calculator.php">
+                <p>
+                    <label for="nom">Nom du produit: </label>
+                    <input type="text" name="nom" id="nom" />
+                </p>
+                <p>
+                    <label for="quantite">Quantité: </label>
+                    <input type="number" min="0" max="10" />
+                </p>
+                <p>
+                    <label for="prix">Prix: </label>
+                    <input type="number" min="1" step="1">
+                </p>
+                <p>
+                    <input type="submit" value="Envoyer" />
+                </p>
+            </form>
+
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
