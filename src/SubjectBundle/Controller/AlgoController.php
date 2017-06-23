@@ -15,6 +15,41 @@ class AlgoController extends Controller
      */
     public function trim(string $chaine) : string
     {
-        // Implémenter une fonction trim (sans utiliser la fonction trim de php, pas le ltrim ni de rtrim...)
+
+        // je pence que l'idée est bonne mais j'arive pas éviter
+        // la suppretion des espace entre les mots
+
+        for ($i = 0; $i < count($chaine); ++$i) {
+
+            // doit suppr les espace du début
+            if ($i <= 1 ) {
+                $test = str_replace(' ', '', $chaine);
+            }
+
+            //doit suppr les espace de fin
+            elseif ($i == $chaine) {
+                $test = str_replace(' ', '', $chaine);
+            }
+        }
+
+        dump($test);
+
+
+
+
+
+
+        ////////AUTRE TEST////////
+
+        /*$test = str_replace(' ', '', $chaine);
+
+        dump($test);*/
+
+        //dump ('' .chop($chaine) . '');
+
+        /*
+        $chaine= str_replace(' ','',$string);
+        dump($chaine);*/
+
     }
 }
