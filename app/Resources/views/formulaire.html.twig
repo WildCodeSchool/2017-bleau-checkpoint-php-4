@@ -1,0 +1,9 @@
+{{ form(form) }}
+
+{% if amounts is defined %}
+    Montants pour le produit : <b style="color: #1E90FF;">{{ name }}</b> <br />
+
+    {% for amount in amounts %}
+        {{ amount }} <br />
+    {% endfor %}
+{% endif %}
