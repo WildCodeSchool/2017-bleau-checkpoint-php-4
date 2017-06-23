@@ -4,6 +4,10 @@ parameters:
     #parameter_name: value
 
 services:
+    #app.service_article:
+        #class: AppBundle\Service\serviceArticle.php
+        #arguments: []
+
     # default configuration for services in *this* file
     _defaults:
         # automatically injects dependencies in your services
