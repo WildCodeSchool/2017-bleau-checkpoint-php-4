@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {{ form(form) }}
+
+    {% if result is defined %}
+
+        <p>Nom du produit: {{ result.name }}</p>
+        <p>Total HT = {{ result.ht }}</p>
+        <p>Total TVA = {{ result.tva }}</p>
+
+    {% endif %}
+
+{% endblock %}
